@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Pname">product name</label>
+                <input type="text" name="" #ProductName id="" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="PDetail">product Detail</label>
+                <input type="text" name="" id="" #ProductDetails class="form-control">
+            </div>
+            <button class="btn btn-primary" (click)="onAddValue(ProductName,ProductDetails)">Add product</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12" *ngFor="let pro of productArray">
+            <div class="card">
+                <div class="card-header">
+                    {{pro.pname}}
+                </div>
+                <div class="card-body">
+                    product is avilable and in {{pro.productStatus}}
+                </div>
+                <div class="card-footer mt-3">
+                    <button class="btn btn-primary" (click)="change(pro.id , productAcces.productStatus)" >In progerss</button>
+                    <button class="btn btn-primary mx-2" (click)="change(pro.id,productAcces.ProductDispatch)">Despatch</button>
+                    <button class="btn btn-primary" (click)="change(pro.id, productAcces.prodcutDiliverd)">Deliverd</button>
+                    <button class="btn btn-danger ml-3" (click)="remove(pro.id)">remove product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
